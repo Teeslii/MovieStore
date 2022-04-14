@@ -14,5 +14,6 @@ public class Order
         public Customer Customer { get; set; }
         public decimal Price { get; set; }
         public DateTime? PurchasedDate { get; set; }
+        public bool InVisible { get; set; } = true;
          
 }
