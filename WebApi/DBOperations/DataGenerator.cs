@@ -14,11 +14,53 @@ namespace WebApi.DBOperations
 
          using(var context = new MovieStoreDbContext(serviceProvider.GetRequiredService<DbContextOptions<MovieStoreDbContext>>()))
      {
+               
+                 context.Movies.AddRange(
+                     new Movie 
+                     {
+                          Title = "The Invisible Man",
+                          GenreId = 1 ,
+                          DirectorId = 1 ,
+                          ReleaseYear = 2020,   
+                          Price = 70000 
+                     },
+                     new Movie
+                     {
+                          Title = "Separation",
+                          GenreId = 1,
+                          DirectorId = 2,
+                          ReleaseYear = 2021,
+                          Price = 45000
+                     },
+                     new Movie 
+                     {
+                          Title = "303",
+                          GenreId = 2,
+                          DirectorId = 3,
+                          ReleaseYear = 2018,
+                          Price = 19000
+                     },
+                     new Movie
+                     {
+                          Title = "Nomadland",
+                          GenreId = 3,
+                          DirectorId = 4,
+                          ReleaseYear = 2021,
+                          Price = 5000
+                     },
+                      new Movie
+                     {
+                          Title = "Soul",
+                          GenreId = 4,
+                          DirectorId = 5,
+                          Price = 7000,
+                          ReleaseYear = 2020
+                     }
+                );
                 if(context.Movies.Any())
                 {
                      return;
                 }
-                
                context.Genres.AddRange(
                     new Genre
                     {
@@ -63,58 +105,49 @@ namespace WebApi.DBOperations
                      {
                           Name = "Jamie",
                           Surname = "Foxx"
+                     },
+                        new Actor
+                     {
+                          Name = "Anton",
+                          Surname = "Spieker"
                      }
                 );
-        
-                context.Movies.AddRange(
-                     new Movie 
-                     {
-                          Title = "The Invisible Man",
-                          GenreId = 1 ,
-                          DirectorId = 1 ,
-                          ReleaseYear = new DateTime(2020,02,28),   
-                          Price = 70000 ,
-                          ActorId = 1
-
+         
+                List<MovieOfActors> MovieOfActors = new List<MovieOfActors>
+                {
+                     new MovieOfActors {
+                         MovieId = 1,
+                         ActorId = 1
                      },
-                     new Movie
-                     {
-                          Title = "Separation",
-                          GenreId = 1,
-                          DirectorId = 2,
-                          ReleaseYear = new DateTime(2021,04,30),
-                          Price = 45000,
-                          ActorId = 2
+                      new MovieOfActors {
+                         MovieId = 2,
+                         ActorId = 2
                      },
-                     new Movie 
-                     {
-                          Title = "303",
-                          GenreId = 2,
-                          DirectorId = 3,
-                          ReleaseYear = new DateTime(2018,07,19),
-                          Price = 19000,
-                          ActorId = 3
+                      new MovieOfActors {
+                         MovieId = 3,
+                         ActorId = 3
                      },
-                     new Movie
-                     {
-                          Title = "Nomadland",
-                          GenreId = 3,
-                          DirectorId = 4,
-                          ReleaseYear = new DateTime(2021,02,19),
-                          Price = 5000,
-                          ActorId = 4
+                     new MovieOfActors {
+                         MovieId = 4,
+                         ActorId = 4
                      },
-                      new Movie
-                     {
-                          Title = "Soul",
-                          GenreId = 4,
-                          DirectorId = 5,
-                          ReleaseYear = new DateTime(2020,09,11),
-                          Price = 7000,
-                          ActorId = 5
+                     new MovieOfActors {
+                         MovieId = 5,
+                         ActorId = 5
+                     },
+                      new MovieOfActors {
+                         MovieId = 3,
+                         ActorId = 6
                      }
-                );
+              };
+              
+                if (context.MovieOfActors.Any())
+                {
+                    return;
+                }
+               context.MovieOfActors.AddRange(MovieOfActors);                 
 
+               
                 context.Directors.AddRange(
                      new Director
                      {
@@ -155,6 +188,7 @@ namespace WebApi.DBOperations
                            Surname = "Bugün",
                            Email = "eylulbugun@gmail.com",
                            Password = "Eylül0123"
+                           
                       }
                 );
                 context.Orders.AddRange(

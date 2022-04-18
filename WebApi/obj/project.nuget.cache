@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "xE6ZPgE1WgUoW7aQK/QaLTUQqI03b4+c1wWNN47RuxFeHUi8/fGJC5Nm51Hgf+7PUiyY+ZGkEKwTk8QzyGDhLw==",
+  "dgSpecHash": "NSihVAwjXu26DUgA/b1R6clIcaQBJc/RCEkgdoAOYr50ITC2yAFehETe5KO92H2Cg39WKSMY7Y7gsM0SMqDtrQ==",
   "success": true,
-  "projectFilePath": "c:\\Users\\tesli\\Desktop\\TASK\\.netCoreWebApi\\MovieStore\\WebApi\\WebApi.csproj",
+  "projectFilePath": "C:\\Users\\tesli\\Desktop\\TASK\\.netCoreWebApi\\MovieStore\\WebApi\\WebApi.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\tesli\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
+    "C:\\Users\\tesli\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
+    "C:\\Users\\tesli\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\tesli\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.4\\microsoft.entityframeworkcore.6.0.4.nupkg.sha512",
     "C:\\Users\\tesli\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.4\\microsoft.entityframeworkcore.abstractions.6.0.4.nupkg.sha512",
     "C:\\Users\\tesli\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.4\\microsoft.entityframeworkcore.analyzers.6.0.4.nupkg.sha512",

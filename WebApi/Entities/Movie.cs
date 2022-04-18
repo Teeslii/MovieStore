@@ -12,10 +12,9 @@ public class Movie
         public Genre Genre { get; set; }
         public int DirectorId { get; set; }
         public Director Director { get; set; }
-        public int ActorId { get; set; }
-        public Actor Actor { get; set; }
-     //   public ICollection<Actor> Actors { get; set; }   
+        public ICollection<MovieOfActors> MovieOfActors { get; set; }   
+        
         public int Price { get; set; }
-        public DateTime ReleaseYear { get; set; }
+        public int ReleaseYear { get; set; }
         public bool IsActive { get; set; } = true;
 }
