@@ -31,3 +31,5 @@ C:\Users\tesli\Desktop\TASK\.netCoreWebApi\MovieStore\WebApi\obj\Debug\net6.0\We
 C:\Users\tesli\Desktop\TASK\.netCoreWebApi\MovieStore\WebApi\obj\Debug\net6.0\ref\WebApi.dll
 C:\Users\tesli\Desktop\TASK\.netCoreWebApi\MovieStore\WebApi\obj\Debug\net6.0\WebApi.pdb
 C:\Users\tesli\Desktop\TASK\.netCoreWebApi\MovieStore\WebApi\obj\Debug\net6.0\WebApi.genruntimeconfig.cache
+C:\Users\tesli\Desktop\TASK\.netCoreWebApi\MovieStore\WebApi\bin\Debug\net6.0\FluentValidation.dll
+C:\Users\tesli\Desktop\TASK\.netCoreWebApi\MovieStore\WebApi\bin\Debug\net6.0\Newtonsoft.Json.dll
