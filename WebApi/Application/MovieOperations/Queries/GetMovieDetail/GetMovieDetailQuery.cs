@@ -20,8 +20,10 @@ namespace WebApi.Application.MovieOperations.Queries.GetMovieDetail
             _mapper = mapper;
         }
 
-           public MovieDetailViewModel Handle(){
+        public MovieDetailViewModel Handle()
+        {
             var movie = _dbContext.Movies.Include(m=>m.Genre).Include(m=>m.Director).Include(m=>m.MovieOfActors).ThenInclude(ma=>ma.Actor).SingleOrDefault(x=>x.Id==MovieId);
+
             if (movie is null)
                 throw new InvalidOperationException("The movie you were looking for was not found.");
                 

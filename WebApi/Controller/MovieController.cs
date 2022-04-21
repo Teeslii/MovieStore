@@ -7,6 +7,7 @@ using AutoMapper;
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using WebApi.Application.MovieOperations.Command.CreateMovie;
 using WebApi.Application.MovieOperations.Queries.GetMovieDetail;
 using WebApi.Application.MovieOperations.Queries.GetMovies;
 using WebApi.DBOperations;
@@ -45,6 +46,18 @@ namespace WebApi
             var result = query.Handle();
             return Ok(result);
         }
+        [HttpPost]
+        public IActionResult CreateMovie([FromBody] CreateMovieViewModel model)
+        {
+            CreateMovieCommand command = new CreateMovieCommand(_context, _mapper);
+            command.Model = model;
+
+            CreateMovieCommandValidator validator = new CreateMovieCommandValidator();
+            validator.ValidateAndThrow(command);
+            command.Handle();
+
+            return Ok();
+        }    
 
     }
 }
