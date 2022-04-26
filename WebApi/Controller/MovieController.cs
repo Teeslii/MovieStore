@@ -8,6 +8,7 @@ using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using WebApi.Application.MovieOperations.Command.CreateMovie;
+using WebApi.Application.MovieOperations.Command.DeleteMovie;
 using WebApi.Application.MovieOperations.Queries.GetMovieDetail;
 using WebApi.Application.MovieOperations.Queries.GetMovies;
 using WebApi.DBOperations;
@@ -58,6 +59,19 @@ namespace WebApi
 
             return Ok();
         }    
+        
+        [HttpDelete("{id}")]
+        public IActionResult DeleteMovie(int id)
+        {
+            DeleteMovieCommand command = new DeleteMovieCommand(_context);
+            command.MovieId = id;
 
+            DeleteMovieCommandValidator validator = new DeleteMovieCommandValidator();
+            validator.ValidateAndThrow(command);
+            
+            command.Handle();
+            
+            return Ok();
+        }
     }
 }
