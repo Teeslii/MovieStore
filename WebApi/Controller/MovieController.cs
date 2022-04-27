@@ -18,7 +18,7 @@ namespace WebApi
 {
     [ApiController]
     [Route("[controller]")]
-    public class MovieController : Controller
+    public class MovieController : ControllerBase
     {
         private readonly IMovieStoreDbContext _context;
         private readonly IMapper _mapper;
