@@ -14,7 +14,7 @@ public class Movie
         public Director Director { get; set; }
         public ICollection<MovieOfActors> MovieOfActors { get; set; }   
         
-        public int Price { get; set; }
+        public decimal Price { get; set; }
         public int ReleaseYear { get; set; }
         public bool IsActive { get; set; } = true;
 }

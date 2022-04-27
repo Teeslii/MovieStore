@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using WebApi.Application.MovieOperations.Command.CreateMovie;
 using WebApi.Application.MovieOperations.Command.DeleteMovie;
+using WebApi.Application.MovieOperations.Command.UpdateMovie;
 using WebApi.Application.MovieOperations.Queries.GetMovieDetail;
 using WebApi.Application.MovieOperations.Queries.GetMovies;
 using WebApi.DBOperations;
@@ -71,6 +72,21 @@ namespace WebApi
             
             command.Handle();
             
+            return Ok();
+        }
+
+        [HttpPut("{id}")]
+         public IActionResult UpdateMovie(int id, [FromBody] UpdateMovieViewModel model)
+        {
+            UpdateMovieCommand command = new UpdateMovieCommand(_context);
+            command.MovieId = id;
+            command.Model = model;
+
+            UpdateMovieCommandValidator validator = new UpdateMovieCommandValidator();
+            validator.ValidateAndThrow(command);
+            
+            command.Handle();
+          
             return Ok();
         }
     }
