@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
+using WebApi.Application.ActorOperations.Command.CreateActor;
 using WebApi.Application.ActorOperations.Queries.GetActorDetail;
 using WebApi.Application.ActorOperations.Queries.GetActors;
 using WebApi.DBOperations;
@@ -49,6 +50,18 @@ namespace WebApi.Controller
             return Ok(result);
         }
         
-  
+        [HttpPost]
+        public IActionResult CreateActor([FromBody] CreateActorViewModel model)
+        {
+            CreateActorCommand command = new CreateActorCommand(_context, _mapper);
+            command.Model = model;
+
+            CreateActorCommandValidator validator = new CreateActorCommandValidator();
+            validator.ValidateAndThrow(command);
+            
+            command.Handle();
+            
+            return Ok();
+        }
     }
 }

@@ -10,6 +10,7 @@ using WebApi.Application.MovieOperations.Queries.GetMovieDetail;
 using WebApi.Application.MovieOperations.Command.CreateMovie;
 using WebApi.Application.ActorOperations.Queries.GetActors;
 using WebApi.Application.ActorOperations.Queries.GetActorDetail;
+using WebApi.Application.ActorOperations.Command.CreateActor;
 
 namespace WebApi.Common
 {
@@ -34,6 +35,8 @@ namespace WebApi.Common
 
             CreateMap<Actor, ActorDetailViewModel>().ForMember(dest => dest.Movies, opt => opt.MapFrom(src => src.MovieOfActors.Select(ma => ma.Movie).ToList()));
             CreateMap<Movie, ActorDetailViewModel.ActorMoviesDetailViewModel>();
+
+            CreateMap<CreateActorViewModel, Actor>();
         }  
        
     }

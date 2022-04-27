@@ -110,6 +110,11 @@ namespace WebApi.DBOperations
                      {
                           Name = "Anton",
                           Surname = "Spieker"
+                     },
+                     new Actor
+                     {
+                        Name = "Linda",
+                        Surname = "May"
                      }
                 );
          
