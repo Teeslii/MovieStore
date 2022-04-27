@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
+using WebApi.Application.ActorOperations.Queries.GetActorDetail;
 using WebApi.Application.ActorOperations.Queries.GetActors;
 using WebApi.DBOperations;
 
@@ -31,6 +33,22 @@ namespace WebApi.Controller
             
             return Ok(result);
         }
+        
+        
+        [HttpGet("{id}")]      
+        public IActionResult GetActorDetail(int id)
+        {
+            GetActorDetailQuery query = new GetActorDetailQuery(_context, _mapper);
+            query.ActorId = id;
+
+            GetActorDetailQueryValidator validator = new GetActorDetailQueryValidator();
+            validator.ValidateAndThrow(query);
+            
+            var result = query.Handle();
+            
+            return Ok(result);
+        }
+        
   
     }
 }
