@@ -6,6 +6,7 @@ using AutoMapper;
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 using WebApi.Application.ActorOperations.Command.CreateActor;
+using WebApi.Application.ActorOperations.Command.DeleteActor;
 using WebApi.Application.ActorOperations.Queries.GetActorDetail;
 using WebApi.Application.ActorOperations.Queries.GetActors;
 using WebApi.DBOperations;
@@ -57,6 +58,20 @@ namespace WebApi.Controller
             command.Model = model;
 
             CreateActorCommandValidator validator = new CreateActorCommandValidator();
+            validator.ValidateAndThrow(command);
+
+            command.Handle();
+            
+            return Ok();
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteActor(int id)
+        {
+            DeleteActorCommand command = new DeleteActorCommand(_context);
+            command.ActorId = id;
+
+            DeleteActorCommandValidator validator = new DeleteActorCommandValidator();
             validator.ValidateAndThrow(command);
             
             command.Handle();
