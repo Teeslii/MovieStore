@@ -23,7 +23,6 @@ namespace WebApi.Application.ActorOperations.Queries.GetActors
             var actors = _dbContext.Actors.Include(a => a.MovieOfActors).ThenInclude(ma => ma.Movie).OrderBy(x => x.Id);
 
             List<ActorsViewModel> returnObj = _mapper.Map<List<ActorsViewModel>>(actors);
-            
             return returnObj;
         }
 

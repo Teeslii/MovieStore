@@ -10,5 +10,6 @@ public class Actor
     public string? Surname { get; set; }
     public string NameSurname { get=> $"{Name} {Surname}"; }
     public ICollection<MovieOfActors> MovieOfActors { get; set; }
+   
     
 }    

@@ -7,6 +7,7 @@ using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 using WebApi.Application.ActorOperations.Command.CreateActor;
 using WebApi.Application.ActorOperations.Command.DeleteActor;
+using WebApi.Application.ActorOperations.Command.UpdateActor;
 using WebApi.Application.ActorOperations.Queries.GetActorDetail;
 using WebApi.Application.ActorOperations.Queries.GetActors;
 using WebApi.DBOperations;
@@ -73,10 +74,26 @@ namespace WebApi.Controller
 
             DeleteActorCommandValidator validator = new DeleteActorCommandValidator();
             validator.ValidateAndThrow(command);
+
+            command.Handle();
+            
+            return Ok();
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult UpdateActor(int id, [FromBody] UpdateActorViewModel model)
+        {
+            UpdateActorCommand command = new UpdateActorCommand(_context);
+            command.ActorId = id;
+            command.Model = model;
+
+            UpdateActorCommandValidator validator = new UpdateActorCommandValidator();
+            validator.ValidateAndThrow(command);
             
             command.Handle();
             
             return Ok();
         }
+
     }
 }
