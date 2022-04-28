@@ -11,6 +11,9 @@ using WebApi.Application.MovieOperations.Command.CreateMovie;
 using WebApi.Application.ActorOperations.Queries.GetActors;
 using WebApi.Application.ActorOperations.Queries.GetActorDetail;
 using WebApi.Application.ActorOperations.Command.CreateActor;
+using WebApi.Application.MovieOfActorOperations.Queries.GetMovieActors;
+using static WebApi.Application.ActorOperations.Queries.GetActors.ActorsViewModel;
+using WebApi.Application.MovieOfActorOperations.Queries.GetActorMovies;
 
 namespace WebApi.Common
 {
@@ -37,8 +40,16 @@ namespace WebApi.Common
             CreateMap<Movie, ActorDetailViewModel.ActorMoviesDetailViewModel>();
 
             CreateMap<CreateActorViewModel, Actor>();
+
+            CreateMap<MovieOfActors, MovieOfActorsViewModel>().ForMember(dest => dest.NameSurname, opt => opt.MapFrom(src => src.Actor.NameSurname))
+                                                    .ForMember(dest => dest.ActorId, opt => opt.MapFrom(src => src.Actor.Id));
+
+            
+            CreateMap<MovieOfActors, ActorOfMoviesViewModel>().ForMember(dest => dest.Director, opt => opt.MapFrom(src => src.Movie.Director.NameSurname))
+                                                    .ForMember(dest => dest.Genre, opt => opt.MapFrom(src => src.Movie.Genre.Name))
+                                                    .ForMember(dest => dest.Title, opt => opt.MapFrom(src => src.Movie.Title))
+                                                    .ForMember(dest => dest.ReleaseYear, opt => opt.MapFrom(src => src.Movie.ReleaseYear));
         }  
-       
     }
 
 }
