@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using AutoMapper;
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
+using WebApi.Application.MovieActorOperations.Commands.CreateMovieActor;
+using WebApi.Application.MovieActorOperations.Commands.DeleteMovieActor;
 using WebApi.Application.MovieOfActorOperations.Queries.GetActorMovies;
 using WebApi.Application.MovieOfActorOperations.Queries.GetMovieActors;
 using WebApi.DBOperations;
@@ -55,6 +57,35 @@ namespace WebApi.Controller
                 return BadRequest("ActorId or MovieId must be entered.");
             }
 
+        }
+
+        [HttpPost]
+        public IActionResult CreateMovieActor([FromBody] CreateMovieActorViewModel model)
+        {
+            CreateMovieActorCommand command = new CreateMovieActorCommand(_context, _mapper);
+            command.Model = model;
+
+            CreateMovieActorCommandValidator validator = new CreateMovieActorCommandValidator();
+            validator.ValidateAndThrow(command);
+
+            command.Handle();
+         
+            return Ok();
+        }
+
+        [HttpDelete]
+        public IActionResult DeleteMovieActor(int movieId, int actorId)
+        {
+            DeleteMovieActorCommand command = new DeleteMovieActorCommand(_context);
+            command.MovieId = movieId;
+            command.ActorId = actorId;
+            
+            DeleteMovieActorCommandValidator validator = new DeleteMovieActorCommandValidator();
+            validator.ValidateAndThrow(command);
+           
+            command.Handle();
+            
+                return Ok(); 
         }
        
     }
