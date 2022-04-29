@@ -18,6 +18,9 @@ using WebApi.Application.MovieActorOperations.Commands.CreateMovieActor;
 using WebApi.Application.DirectorOperations.Queries.GetDirectors;
 using WebApi.Application.DirectorOperations.Queries.GetDirectorDetail;
 using WebApi.Application.DirectorOperations.Commands.CreateDirector;
+using WebApi.Application.GenreOperations.Queries.GetGenres;
+using WebApi.Application.GenreOperations.Queries.GetGenreDetail;
+using WebApi.Application.GenreOperations.Commands.CreateGenre;
 
 namespace WebApi.Common
 {
@@ -64,6 +67,12 @@ namespace WebApi.Common
             CreateMap<Movie, DirectorDetailViewModel.DirectorMoviesViewModel>();
 
             CreateMap<CreateDirectorViewModel, Director>();
+
+            CreateMap<Genre, GenresViewModel>();
+          
+            CreateMap<Genre, GenreDetailViewModel>();
+         
+            CreateMap<CreateGenreViewModel, Genre>();
         }  
     }
 
