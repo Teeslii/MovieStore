@@ -16,6 +16,7 @@ using WebApi.DBOperations;
 
 namespace WebApi.Controller
 {
+    [ApiController]
     [Route("[controller]")]
     public class GenreController : ControllerBase
     {

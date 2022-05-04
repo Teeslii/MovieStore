@@ -14,7 +14,7 @@ using WebApi.Application.MovieOperations.Queries.GetMovieDetail;
 using WebApi.Application.MovieOperations.Queries.GetMovies;
 using WebApi.DBOperations;
 
-namespace WebApi
+namespace WebApi.Controller
 {
     [ApiController]
     [Route("[controller]")]

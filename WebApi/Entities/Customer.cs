@@ -12,8 +12,7 @@ public class Customer
         public string NameSurname { get=> $"{Name} {Surname}"; }
         public string? Email { get; set; }
         public string Password { get; set; }
-        public ICollection<Order> OrderMovies { get; set; }
-         public ICollection<Genre> FavoriteGenres { get; set; }
+        public ICollection<Order> Orders { get; set; }
         public bool IsActive { get; set; } = true;
 
 }

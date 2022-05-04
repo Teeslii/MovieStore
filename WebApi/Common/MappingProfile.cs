@@ -21,6 +21,9 @@ using WebApi.Application.DirectorOperations.Commands.CreateDirector;
 using WebApi.Application.GenreOperations.Queries.GetGenres;
 using WebApi.Application.GenreOperations.Queries.GetGenreDetail;
 using WebApi.Application.GenreOperations.Commands.CreateGenre;
+using WebApi.Application.OrderOperations.Commands.CreateOrder;
+using WebApi.Application.OrderOperations.Queries.GetOrderDetail;
+using WebApi.Application.OrderOperations.Queries.GetOrderByCustomerIdDetail;
 
 namespace WebApi.Common
 {
@@ -73,6 +76,13 @@ namespace WebApi.Common
             CreateMap<Genre, GenreDetailViewModel>();
          
             CreateMap<CreateGenreViewModel, Genre>();
+
+            CreateMap<CreateOrderModel, Order>();
+           
+            CreateMap<Order, OrderDetailViewModel>().ForMember(dest => dest.Customer, opt => opt.MapFrom(src => src.Customer.NameSurname))
+                                                    .ForMember(dest => dest.Movie, opt => opt.MapFrom(src => src.Movie.Title));
+           
+            CreateMap<Order, OrderByCustomerIdViewModel>().ForMember(dest => dest.Movie, opt => opt.MapFrom(src => src.Movie.Title));
         }  
     }
 
