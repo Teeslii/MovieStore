@@ -17,6 +17,9 @@ using WebApi.DBOperations;
 using WebApi.Middlewares;
 using Newtonsoft.Json;
 using WebApi.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace WebApi
 {
@@ -31,7 +34,18 @@ namespace WebApi
 
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opt => {
+                opt.TokenValidationParameters = new TokenValidationParameters{
+                    ValidateAudience = true,
+                    ValidateIssuer = true,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = Configuration["Token:Issuer"],
+                    ValidAudience = Configuration["Token:Audience"],
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Token:SecurityKey"])),
+                    ClockSkew = TimeSpan.Zero
+                };
+            });
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -41,7 +55,6 @@ namespace WebApi
             services.AddDbContext<MovieStoreDbContext>(options => options.UseInMemoryDatabase(databaseName: "MovieStoreDB"));
             services.AddScoped<IMovieStoreDbContext>(provider => provider.GetService<MovieStoreDbContext>());
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
-
             services.AddSingleton<ILoggerService,ConsoleLogger>();
         }
 
@@ -54,11 +67,15 @@ namespace WebApi
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebApi v1"));
             }
-
+            
+          
+            
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
+            
+            app.UseAuthentication(); 
+            
             app.UseAuthorization();
 
             app.UseCustomExceptionMiddleware();

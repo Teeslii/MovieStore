@@ -151,8 +151,24 @@ namespace WebApi.DBOperations
                     return;
                 }
                context.MovieOfActors.AddRange(MovieOfActors);                 
+              
+               List<CustomerFavoritGenre> customerFavoritGenres = new List<CustomerFavoritGenre>
+                {
+                    new CustomerFavoritGenre{ CustomerId = 1, GenreId = 1 },
+                    new CustomerFavoritGenre{ CustomerId = 1, GenreId = 2 },
+                    new CustomerFavoritGenre{ CustomerId = 1, GenreId = 3 },
+                    new CustomerFavoritGenre{ CustomerId = 2, GenreId = 1 },
+                    new CustomerFavoritGenre{ CustomerId = 2, GenreId = 3 },
+                };
 
-               
+                
+               context.CustomerFavoritGenres.AddRange(customerFavoritGenres);
+
+                if(context.CustomerFavoritGenres.Any())
+                {
+                     return;
+                }
+                
                 context.Directors.AddRange(
                      new Director
                      {

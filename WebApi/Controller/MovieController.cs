@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using FluentValidation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using WebApi.Application.MovieOperations.Command.CreateMovie;
@@ -16,6 +17,7 @@ using WebApi.DBOperations;
 
 namespace WebApi.Controller
 {
+    
     [ApiController]
     [Route("[controller]")]
     public class MovieController : ControllerBase
