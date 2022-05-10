@@ -2,3 +2,5 @@
 WebApi/bin
 WebApi/obj
 *.dll
+Tests/WebApi.UnitTests/bin
+Tests/WebApi.UnitTests/obj
