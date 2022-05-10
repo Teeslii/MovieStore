@@ -21,7 +21,7 @@ namespace WebApi.Application.CustomerOperations.Queries.GetCustomerDetail
 
         public CustomerDetailViewModel Handle()
         {
-            var customer = _dbContext.Customers.Include(x => x.CustomerFavoritGenres)
+            var customer = _dbContext.Customers.Include(x => x.CustomerFavoriteGenre)
                                             .ThenInclude(cfg => cfg.Genre)
                                             .Include(x => x.Orders)
                                             .ThenInclude(x => x.Movie).SingleOrDefault(c => c.Id == CustomerId);
@@ -41,7 +41,7 @@ namespace WebApi.Application.CustomerOperations.Queries.GetCustomerDetail
         public string NameSurname { get; set; }
         public string Email { get; set; }
         public List<OrderVM> Orders { get; set; }
-        public List<CustomerFavoritGenreVM> CustomerFavoritGenres { get; set; }
+        public List<CustomerFavoriteGenreVM> CustomerFavoriteGenre { get; set; }
 
         public struct OrderVM
         {
@@ -52,7 +52,7 @@ namespace WebApi.Application.CustomerOperations.Queries.GetCustomerDetail
             public bool InVisible { get; set; }
         }
 
-        public struct CustomerFavoritGenreVM
+        public struct CustomerFavoriteGenreVM
         {
             public int Id { get; set; }
             public string Name { get; set; }

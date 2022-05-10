@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tesli\\Desktop\\TASK\\.netCoreWebApi\\MovieStore\\Tests\\WebApi.UnitTests\\WebApi.UnitTests.csproj": {}
+    "c:\\Users\\tesli\\Desktop\\TASK\\.netCoreWebApi\\MovieStore\\Tests\\WebApi.UnitTests\\WebApi.UnitTests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tesli\\Desktop\\TASK\\.netCoreWebApi\\MovieStore\\Tests\\WebApi.UnitTests\\WebApi.UnitTests.csproj": {
+    "c:\\Users\\tesli\\Desktop\\TASK\\.netCoreWebApi\\MovieStore\\Tests\\WebApi.UnitTests\\WebApi.UnitTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tesli\\Desktop\\TASK\\.netCoreWebApi\\MovieStore\\Tests\\WebApi.UnitTests\\WebApi.UnitTests.csproj",
+        "projectUniqueName": "c:\\Users\\tesli\\Desktop\\TASK\\.netCoreWebApi\\MovieStore\\Tests\\WebApi.UnitTests\\WebApi.UnitTests.csproj",
         "projectName": "WebApi.UnitTests",
-        "projectPath": "C:\\Users\\tesli\\Desktop\\TASK\\.netCoreWebApi\\MovieStore\\Tests\\WebApi.UnitTests\\WebApi.UnitTests.csproj",
+        "projectPath": "c:\\Users\\tesli\\Desktop\\TASK\\.netCoreWebApi\\MovieStore\\Tests\\WebApi.UnitTests\\WebApi.UnitTests.csproj",
         "packagesPath": "C:\\Users\\tesli\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tesli\\Desktop\\TASK\\.netCoreWebApi\\MovieStore\\Tests\\WebApi.UnitTests\\obj\\",
+        "outputPath": "c:\\Users\\tesli\\Desktop\\TASK\\.netCoreWebApi\\MovieStore\\Tests\\WebApi.UnitTests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tesli\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\tesli\\Desktop\\TASK\\.netCoreWebApi\\MovieStore\\WebApi\\WebApi.csproj": {
-                "projectPath": "C:\\Users\\tesli\\Desktop\\TASK\\.netCoreWebApi\\MovieStore\\WebApi\\WebApi.csproj"
+              "c:\\Users\\tesli\\Desktop\\TASK\\.netCoreWebApi\\MovieStore\\WebApi\\WebApi.csproj": {
+                "projectPath": "c:\\Users\\tesli\\Desktop\\TASK\\.netCoreWebApi\\MovieStore\\WebApi\\WebApi.csproj"
               }
             }
           }
@@ -100,14 +100,14 @@
         }
       }
     },
-    "C:\\Users\\tesli\\Desktop\\TASK\\.netCoreWebApi\\MovieStore\\WebApi\\WebApi.csproj": {
+    "c:\\Users\\tesli\\Desktop\\TASK\\.netCoreWebApi\\MovieStore\\WebApi\\WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tesli\\Desktop\\TASK\\.netCoreWebApi\\MovieStore\\WebApi\\WebApi.csproj",
+        "projectUniqueName": "c:\\Users\\tesli\\Desktop\\TASK\\.netCoreWebApi\\MovieStore\\WebApi\\WebApi.csproj",
         "projectName": "WebApi",
-        "projectPath": "C:\\Users\\tesli\\Desktop\\TASK\\.netCoreWebApi\\MovieStore\\WebApi\\WebApi.csproj",
+        "projectPath": "c:\\Users\\tesli\\Desktop\\TASK\\.netCoreWebApi\\MovieStore\\WebApi\\WebApi.csproj",
         "packagesPath": "C:\\Users\\tesli\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tesli\\Desktop\\TASK\\.netCoreWebApi\\MovieStore\\WebApi\\obj\\",
+        "outputPath": "c:\\Users\\tesli\\Desktop\\TASK\\.netCoreWebApi\\MovieStore\\WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tesli\\AppData\\Roaming\\NuGet\\NuGet.Config",

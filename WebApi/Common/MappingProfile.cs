@@ -86,10 +86,10 @@ namespace WebApi.Common
            
             CreateMap<Order, OrderByCustomerIdViewModel>().ForMember(dest => dest.Movie, opt => opt.MapFrom(src => src.Movie.Title));
 
-            CreateMap<Customer, CustomerDetailViewModel>().ForMember(dest => dest.CustomerFavoritGenres, opt => opt.MapFrom(src => src.CustomerFavoritGenres.Select(cfg => cfg.Genre).ToList()))
+            CreateMap<Customer, CustomerDetailViewModel>().ForMember(dest => dest.CustomerFavoriteGenre, opt => opt.MapFrom(src => src.CustomerFavoriteGenre.Select(cfg => cfg.Genre).ToList()))
                                                     .ForMember(dest => dest.Orders, opt => opt.MapFrom(src => src.Orders.ToList()));
                                                     
-            CreateMap<Genre, CustomerDetailViewModel.CustomerFavoritGenreVM>();
+            CreateMap<Genre, CustomerDetailViewModel.CustomerFavoriteGenreVM>();
 
             CreateMap<Order , CustomerDetailViewModel.OrderVM>();
             

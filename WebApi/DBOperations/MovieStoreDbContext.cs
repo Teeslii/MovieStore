@@ -14,11 +14,11 @@ namespace WebApi.DBOperations
         public DbSet<MovieOfActors> MovieOfActors  { get; set;}
         public DbSet<Order> Orders { get; set;}
         public DbSet<Customer> Customers { get; set; }
-        public DbSet<CustomerFavoritGenre> CustomerFavoritGenres { get; set; }
+        public DbSet<CustomerFavoriteGenre> CustomerFavoriteGenre { get; set; }
        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<MovieOfActors>(ConfigureMovieOfActor);
-            modelBuilder.Entity<CustomerFavoritGenre>(ConfigureCustomerFavoritGenre);
+            modelBuilder.Entity<CustomerFavoriteGenre>(ConfigureCustomerFavoriteGenre);
 
             base.OnModelCreating(modelBuilder);
         }
@@ -30,11 +30,11 @@ namespace WebApi.DBOperations
             modelBuilder.HasOne(mc => mc.Movie).WithMany(g => g.MovieOfActors).HasForeignKey(mg => mg.MovieId);
             modelBuilder.HasOne(mc => mc.Actor).WithMany(g => g.MovieOfActors).HasForeignKey(mg => mg.ActorId);
         }
-        private void ConfigureCustomerFavoritGenre(EntityTypeBuilder<CustomerFavoritGenre> modelBuilder)
+        private void ConfigureCustomerFavoriteGenre(EntityTypeBuilder<CustomerFavoriteGenre> modelBuilder)
         {
             modelBuilder.HasKey(sc => new { sc.GenreId, sc.CustomerId });
-            modelBuilder.HasOne<Customer>(x => x.Customer).WithMany(a => a.CustomerFavoritGenres).HasForeignKey(x => x.CustomerId);
-            modelBuilder.HasOne<Genre>(x => x.Genre).WithMany(m => m.CustomerFavoritGenres).HasForeignKey(x => x.GenreId);
+            modelBuilder.HasOne<Customer>(x => x.Customer).WithMany(a => a.CustomerFavoriteGenre).HasForeignKey(x => x.CustomerId);
+            modelBuilder.HasOne<Genre>(x => x.Genre).WithMany(m => m.CustomerFavoriteGenre).HasForeignKey(x => x.GenreId);
         } 
         public override int SaveChanges()
         {

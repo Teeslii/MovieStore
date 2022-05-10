@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "l8f7r+BJm62oYKdIDM1ADPEEa14jDfjRDg+h3nEIxQXA6HQXXirjIMNNbFLS55RqbEv36/aJODCLbPObjcpbxg==",
+  "dgSpecHash": "1SbhoHMHEqMrR/aRDwg3lRB4Ox0ECLp1De0IIAlu+J1aw6izdEn1y6gYnJviI/aF8mncrPren7zvsSGxBwYrYg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\tesli\\Desktop\\TASK\\.netCoreWebApi\\MovieStore\\Tests\\WebApi.UnitTests\\WebApi.UnitTests.csproj",
+  "projectFilePath": "c:\\Users\\tesli\\Desktop\\TASK\\.netCoreWebApi\\MovieStore\\Tests\\WebApi.UnitTests\\WebApi.UnitTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tesli\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\tesli\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",

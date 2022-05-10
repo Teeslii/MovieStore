@@ -9,7 +9,7 @@ public class Customer : User
         public string? RefreshToken { get; set; }
         public DateTime? RefresTokenExpireDate { get; set; }
         public ICollection<Order> Orders { get; set; }
-        public ICollection<CustomerFavoritGenre> CustomerFavoritGenres { get; set; }
+        public ICollection<CustomerFavoriteGenre> CustomerFavoriteGenre { get; set; }
 
       
 }

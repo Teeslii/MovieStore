@@ -152,19 +152,19 @@ namespace WebApi.DBOperations
                 }
                context.MovieOfActors.AddRange(MovieOfActors);                 
               
-               List<CustomerFavoritGenre> customerFavoritGenres = new List<CustomerFavoritGenre>
+               List<CustomerFavoriteGenre> customerFavoriteGenres = new List<CustomerFavoriteGenre>
                 {
-                    new CustomerFavoritGenre{ CustomerId = 1, GenreId = 1 },
-                    new CustomerFavoritGenre{ CustomerId = 1, GenreId = 2 },
-                    new CustomerFavoritGenre{ CustomerId = 1, GenreId = 3 },
-                    new CustomerFavoritGenre{ CustomerId = 2, GenreId = 1 },
-                    new CustomerFavoritGenre{ CustomerId = 2, GenreId = 3 },
+                    new CustomerFavoriteGenre{ CustomerId = 1, GenreId = 1 },
+                    new CustomerFavoriteGenre{ CustomerId = 1, GenreId = 2 },
+                    new CustomerFavoriteGenre{ CustomerId = 1, GenreId = 3 },
+                    new CustomerFavoriteGenre{ CustomerId = 2, GenreId = 1 },
+                    new CustomerFavoriteGenre{ CustomerId = 2, GenreId = 3 },
                 };
 
                 
-               context.CustomerFavoritGenres.AddRange(customerFavoritGenres);
+               context.CustomerFavoriteGenre.AddRange(customerFavoriteGenres);
 
-                if(context.CustomerFavoritGenres.Any())
+                if(context.CustomerFavoriteGenre.Any())
                 {
                      return;
                 }

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 namespace WebApi.Entities
 {
     [Keyless]
-    public class CustomerFavoritGenre
+    public class CustomerFavoriteGenre
     {
         public int GenreId { get; set; }
         public Genre Genre { get; set; }
