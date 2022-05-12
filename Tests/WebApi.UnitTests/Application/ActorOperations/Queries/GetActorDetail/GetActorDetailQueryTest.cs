@@ -55,7 +55,6 @@ namespace Tests.WebApi.UnitTests.Application.ActorOperations.Queries.GetActorDet
             findActor.Should().NotBeNull();
             findActor.Name.Should().Be(newActor.Name);
             findActor.Surname.Should().Be(newActor.Surname);
-            findActor.IsActive.Should().Be(actor.IsActive);
         }
 
     }

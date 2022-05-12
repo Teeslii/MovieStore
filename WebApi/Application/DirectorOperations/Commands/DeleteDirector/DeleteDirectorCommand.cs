@@ -23,7 +23,7 @@ namespace WebApi.Application.DirectorOperations.Commands.DeleteDirector
            
             var movies = _dbContext.Movies.Any(x=> x.DirectorId == DirectorId);
             
-            if(!movies)
+            if(movies)
                 throw new InvalidOperationException("The director must be deleted from the movie first.");
             
             _dbContext.Directors.Remove(Director);            
