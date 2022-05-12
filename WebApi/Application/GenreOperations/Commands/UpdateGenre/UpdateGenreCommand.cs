@@ -21,7 +21,8 @@ namespace WebApi.Application.GenreOperations.Commands.UpdateGenre
             if (genre is null)
                 throw new InvalidOperationException("The movie type you are trying to update could not be found.");
             
-            if (!_dbContext.Genres.Any(x => x.Name.ToLower() == Model.Name.ToLower() && x.Id != GenreId))
+            
+            if (_dbContext.Genres.Any(x => x.Name.ToLower() == Model.Name.ToLower() && x.Id != GenreId))
                 throw new InvalidOperationException("A movie genre with the same name already exists.");
 
             genre.Name = !string.IsNullOrEmpty(Model.Name.Trim()) ? Model.Name : genre.Name;
