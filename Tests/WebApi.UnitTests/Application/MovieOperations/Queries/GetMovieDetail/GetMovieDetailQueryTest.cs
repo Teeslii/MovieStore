@@ -10,12 +10,12 @@ using Xunit;
 
 namespace Tests.WebApi.UnitTests.Application.MovieOperations.Queries.GetMovieDetail
 {
-    public class GetMovieDetailQueryTests : IClassFixture<CommonTestFixture>
+    public class GetMovieDetailQueryTest : IClassFixture<CommonTestFixture>
     {
         private readonly MovieStoreDbContext _context;
         private readonly IMapper _mapper;
 
-        public GetMovieDetailQueryTests(CommonTestFixture testFixture)
+        public GetMovieDetailQueryTest(CommonTestFixture testFixture)
         {
             _context = testFixture.context;
             _mapper = testFixture.Mapper;
@@ -30,10 +30,9 @@ namespace Tests.WebApi.UnitTests.Application.MovieOperations.Queries.GetMovieDet
             query.MovieId = id;
 
             FluentActions
-                    .Invoking(()=>query.Handle())
+                    .Invoking(() => query.Handle())
                     .Should().Throw<InvalidOperationException>()
                     .And.Message.Should().Be("The movie you were looking for was not found.");
-
         }
 
         [Fact]
