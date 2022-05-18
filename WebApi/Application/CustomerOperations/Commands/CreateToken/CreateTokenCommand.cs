@@ -26,7 +26,7 @@ namespace WebApi.Application.CustomerOperations.Commands.CreateToken
             var customer = _dbContext.Customers.FirstOrDefault(x=>x.Email == Model.Email && x.Password == Model.Password);
            
             if(customer is null)
-                throw new InvalidOperationException("Username and password are incorrect.");
+                throw new InvalidOperationException("E-mail address and password are incorrect.");
             
             TokenHandler handler = new TokenHandler(_configuration);
             Token token = handler.CreateAccessToken(customer);

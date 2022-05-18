@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+ 
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using WebApi.Common;
 using WebApi.DBOperations;
 
@@ -13,7 +15,7 @@ namespace WebApi.UnitTests.TestSetup
     {
         public MovieStoreDbContext context { get; set; }
         public IMapper Mapper { get; set; }
-
+        public IConfiguration Configuration { get; set;}
         public CommonTestFixture()
         {
             var options = new DbContextOptionsBuilder<MovieStoreDbContext>().UseInMemoryDatabase(databaseName: "MovieStoreTestDB").Options;
@@ -32,7 +34,8 @@ namespace WebApi.UnitTests.TestSetup
             context.SaveChanges();
 
             Mapper = new MapperConfiguration(cfg => cfg.AddProfile<MappingProfile>()).CreateMapper();
-
+            
+            Configuration = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
 
         }    
     }
