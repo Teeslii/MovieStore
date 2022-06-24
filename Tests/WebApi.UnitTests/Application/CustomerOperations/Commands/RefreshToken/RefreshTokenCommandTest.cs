@@ -15,7 +15,7 @@ using Xunit;
 
 namespace WebApi.UnitTests.Application.CustomerOperations.Commands.RefreshToken
 {
-    public class RefreshTokenCommandTest : IClassFixture<CommonTestFixture>
+    public class RefreshTokenCommandTest : IDisposable, IClassFixture<CommonTestFixture>
     {
         private readonly MovieStoreDbContext _dbContext;
         private readonly IConfiguration _configuration;
@@ -26,6 +26,11 @@ namespace WebApi.UnitTests.Application.CustomerOperations.Commands.RefreshToken
             _dbContext = testFixture.context;
             _configuration = testFixture.Configuration;
             _mapper = testFixture.Mapper;
+        }
+
+        public void Dispose()
+        {
+            _dbContext.Dispose();
         }
 
         [Fact]

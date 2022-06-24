@@ -10,7 +10,7 @@ using Xunit;
 
 namespace Tests.WebApi.UnitTests.Application.ActorOperations.Commands.UpdateActor
 {
-    public class UpdateActorCommandTests : IClassFixture<CommonTestFixture>
+    public class UpdateActorCommandTests : IDisposable, IClassFixture<CommonTestFixture>
     {
         private readonly MovieStoreDbContext _context;
 
@@ -18,7 +18,11 @@ namespace Tests.WebApi.UnitTests.Application.ActorOperations.Commands.UpdateActo
         {
             _context = testFixture.context;
         }
-
+        
+        public void Dispose()
+        {
+            _context.Dispose();
+        }
         [Fact]
         public void WhenAlreadyActorNameIsGiven_InvalidOperationException_ShouldBeReturn()
         {

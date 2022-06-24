@@ -12,7 +12,7 @@ using WebApi.Application.CustomerOperations.Commands.CreateCustomer;
 
 namespace WebApi.UnitTests.Application.CustomerOperations.Commands.CreateCustomer
 {
-    public class CreateCustomerCommandTest : IClassFixture<CommonTestFixture>
+    public class CreateCustomerCommandTest : IDisposable, IClassFixture<CommonTestFixture>
     {
         private readonly MovieStoreDbContext _dbContext;
         private readonly IMapper _mapper;
@@ -21,7 +21,11 @@ namespace WebApi.UnitTests.Application.CustomerOperations.Commands.CreateCustome
             _dbContext = testFixture.context;
             _mapper = testFixture.Mapper;
         }
-
+        
+        public void Dispose()
+        {
+            _dbContext.Dispose();
+        }
         [Fact]
         public void WhenAlreadyExistingCustomerEmailIsGiven_Handle_ThrowsInvalidOperationException()
         {

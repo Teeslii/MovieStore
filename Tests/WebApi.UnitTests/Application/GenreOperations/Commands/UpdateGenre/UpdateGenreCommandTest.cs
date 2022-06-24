@@ -10,7 +10,7 @@ using Xunit;
 
 namespace Tests.WebApi.UnitTests.Application.GenreOperations.Commands.UpdateGenre
 {
-    public class UpdateGenreCommandTests : IClassFixture<CommonTestFixture>
+    public class UpdateGenreCommandTests : IDisposable, IClassFixture<CommonTestFixture>
     {
         private readonly MovieStoreDbContext _context;
 
@@ -19,6 +19,10 @@ namespace Tests.WebApi.UnitTests.Application.GenreOperations.Commands.UpdateGenr
             _context = testFixture.context;
         }
 
+        public void Dispose()
+        {
+            _context.Dispose();
+        }
         [Fact]
         public void WhenAlreadyExistGenreIdIsGiven_InvalidOperationException_ShouldBeReturn()
         {

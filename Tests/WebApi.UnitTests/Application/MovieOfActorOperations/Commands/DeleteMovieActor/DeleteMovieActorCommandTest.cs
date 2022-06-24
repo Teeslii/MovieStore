@@ -10,7 +10,7 @@ using WebApi.Application.MovieActorOperations.Commands.DeleteMovieActor;
 
 namespace Tests.WebApi.UnitTests.Application.MovieOfActorOperations.Commands.DeleteMovieActor
 {
-    public class DeleteMovieActorCommandTest : IClassFixture<CommonTestFixture>
+    public class DeleteMovieActorCommandTest : IDisposable, IClassFixture<CommonTestFixture>
     {
         private readonly MovieStoreDbContext _context;
 
@@ -18,7 +18,12 @@ namespace Tests.WebApi.UnitTests.Application.MovieOfActorOperations.Commands.Del
         {
             _context = testFixture.context;
         }
-
+        
+        public void Dispose()
+        {
+            _context.Dispose();
+        }
+        
         [Fact]
         public void WhenNotFoundActorIdIsGiven_InvalidOperationException_ShouldBeReturn()
         {

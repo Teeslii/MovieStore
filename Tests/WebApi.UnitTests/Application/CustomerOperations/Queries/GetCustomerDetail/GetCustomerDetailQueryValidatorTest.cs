@@ -9,7 +9,7 @@ using Xunit;
 
 namespace WebApi.UnitTests.Application.CustomerOperations.Queries.GetCustomerDetail
 {
-    public class GetCustomerDetailQueryValidatorTest : IClassFixture<CommonTestFixture>
+    public class GetCustomerDetailQueryValidatorTest  
     {
         [Theory]
         [InlineData(0)] 

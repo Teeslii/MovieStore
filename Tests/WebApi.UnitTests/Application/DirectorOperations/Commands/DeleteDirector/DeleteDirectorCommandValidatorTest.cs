@@ -6,7 +6,7 @@ using Xunit;
 
 namespace Tests.WebApi.UnitTests.Application.DirectorOperations.Commands.DeleteDirector
 {
-    public class DeleteDirectorCommandValidatorTest : IClassFixture<CommonTestFixture>
+    public class DeleteDirectorCommandValidatorTest 
     {
         [Theory]
         [InlineData(0)]

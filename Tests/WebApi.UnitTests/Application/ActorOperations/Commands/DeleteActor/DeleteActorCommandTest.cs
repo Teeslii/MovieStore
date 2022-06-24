@@ -10,7 +10,7 @@ using Xunit;
 
 namespace Tests.WebApi.UnitTests.Application.ActorOperations.Commands.DeleteActor
 {
-    public class DeleteActorCommandTests : IClassFixture<CommonTestFixture>
+    public class DeleteActorCommandTests : IDisposable, IClassFixture<CommonTestFixture>
     {
         private readonly MovieStoreDbContext _context;
         private readonly IMapper _mapper;
@@ -20,7 +20,12 @@ namespace Tests.WebApi.UnitTests.Application.ActorOperations.Commands.DeleteActo
             _context = testFixture.context;
             _mapper = testFixture.Mapper;
         }
-
+        
+        public void Dispose()
+        {
+            _context.Dispose();
+        }
+        
         [Fact]
         public void WhenNotFoundActorIdIsGiven_InvalidOperationException_ShouldBeReturn()
         {

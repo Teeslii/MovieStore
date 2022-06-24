@@ -10,13 +10,18 @@ using Xunit;
 
 namespace Tests.WebApi.UnitTests.Application.GenreOperations.Commands.DeleteGenre
 {
-    public class DeleteGenreCommandTests : IClassFixture<CommonTestFixture>
+    public class DeleteGenreCommandTests : IDisposable, IClassFixture<CommonTestFixture>
     {
         private readonly MovieStoreDbContext _context;
 
         public DeleteGenreCommandTests(CommonTestFixture testFixture)
         {
             _context = testFixture.context;
+        }
+        
+        public void Dispose()
+        {
+            _context.Dispose();
         }
 
         [Fact]

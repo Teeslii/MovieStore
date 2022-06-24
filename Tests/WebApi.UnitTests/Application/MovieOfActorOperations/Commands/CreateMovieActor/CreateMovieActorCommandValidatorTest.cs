@@ -9,7 +9,7 @@ using WebApi.Application.MovieActorOperations.Commands.CreateMovieActor;
 
 namespace Tests.WebApi.UnitTests.Application.MovieOfActorOperations.Commands.CreateMovieActor
 {
-    public class CreateMovieActorCommandValidatorTest : IClassFixture<CommonTestFixture>
+    public class CreateMovieActorCommandValidatorTest 
     {
 
         [Theory]

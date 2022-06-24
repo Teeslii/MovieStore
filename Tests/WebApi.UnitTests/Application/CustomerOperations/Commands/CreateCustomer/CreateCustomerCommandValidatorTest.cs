@@ -10,7 +10,7 @@ using Xunit;
 
 namespace WebApi.UnitTests.Application.CustomerOperations.Commands.CreateCustomer
 {
-    public class CreateCustomerCommandValidatorTest : IClassFixture<CommonTestFixture>
+    public class CreateCustomerCommandValidatorTest  
     {
 
         [Theory]

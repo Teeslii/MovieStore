@@ -6,7 +6,7 @@ using Xunit;
 
 namespace Tests.WebApi.UnitTests.Application.MovieOperations.Commands.DeleteMovie
 {
-    public class DeleteMovieCommandValidatorTest : IClassFixture<CommonTestFixture>
+    public class DeleteMovieCommandValidatorTest  
     {
         [Theory]
         [InlineData(0)]

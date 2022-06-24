@@ -5,7 +5,7 @@ using Xunit;
 
 namespace Tests.WebApi.UnitTests.Application.GenreOperations.Commands.CreateGenre
 {
-    public class CreateGenreCommandValidatorTest : IClassFixture<CommonTestFixture>
+    public class CreateGenreCommandValidatorTest  
     {
 
         [Theory]

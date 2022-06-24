@@ -6,7 +6,7 @@ using Xunit;
 
 namespace Tests.WebApi.UnitTests.Application.GenreOperations.Commands.UpdateGenre
 {
-    public class UpdateGenreCommandValidatorTest : IClassFixture<CommonTestFixture>
+    public class UpdateGenreCommandValidatorTest 
     {
         [Theory]
         [InlineData(0, "a")]

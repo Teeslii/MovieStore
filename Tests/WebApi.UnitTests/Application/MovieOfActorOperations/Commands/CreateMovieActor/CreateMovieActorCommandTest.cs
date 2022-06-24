@@ -10,7 +10,7 @@ using WebApi.Application.MovieActorOperations.Commands.CreateMovieActor;
 
 namespace Tests.WebApi.UnitTests.Application.MovieOfActorOperations.Commands.CreateMovieActor
 {
-    public class CreateMovieActorCommandTest : IClassFixture<CommonTestFixture>
+    public class CreateMovieActorCommandTest : IDisposable, IClassFixture<CommonTestFixture>
     {
         private readonly MovieStoreDbContext _context;
         private readonly IMapper _mapper;
@@ -20,7 +20,11 @@ namespace Tests.WebApi.UnitTests.Application.MovieOfActorOperations.Commands.Cre
             _context = testFixture.context;
             _mapper = testFixture.Mapper;
         }
-
+        
+        public void Dispose()
+        {
+            _context.Dispose();
+        }
         [Fact]
         public void WhenNotFoundMovieIdIsGiven_InvalidOperationException_ShouldBeReturn()
         {

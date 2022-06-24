@@ -9,9 +9,9 @@ using Xunit;
 
 namespace Tests.WebApi.UnitTests.Application.ActorOperations.Commands.CreateActor
 {
-    public class CreateActorCommandValidatorTest : IClassFixture<CommonTestFixture>
+    public class CreateActorCommandValidatorTest 
     {
-
+        
         [Theory]
         [InlineData("a","b")]
         [InlineData("a","bc")]

@@ -8,7 +8,7 @@ using WebApi.Application.DirectorOperations.Commands.CreateDirector;
 
 namespace Tests.WebApi.UnitTests.Application.DirectorOperations.Commands.CreateDirector
 {
-    public class CreateDirectorCommandValidatorTest : IClassFixture<CommonTestFixture>
+    public class CreateDirectorCommandValidatorTest  
     {
 
         [Theory]

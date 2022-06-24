@@ -9,7 +9,7 @@ using Xunit;
 
 namespace WebApi.UnitTests.Application.MovieOperations.Queries
 {
-    public class GetMovieDetailQueryValidatorTest : IClassFixture<CommonTestFixture>
+    public class GetMovieDetailQueryValidatorTest  
     {
         [Theory]
         [InlineData(0)]

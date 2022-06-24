@@ -6,7 +6,7 @@ using Xunit;
 
 namespace Tests.WebApi.UnitTests.Application.MovieOperations.Commands.UpdateMovie
 {
-    public class UpdateMovieCommandValidatorTest : IClassFixture<CommonTestFixture>
+    public class UpdateMovieCommandValidatorTest 
     {
         [Theory]
         [InlineData(0, "a", -1, 0, 0, 1500)]

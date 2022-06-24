@@ -9,7 +9,7 @@ using Xunit;
 
 namespace WebApi.UnitTests.Application.GenreOperations.Queries.GetGenreDetail
 {
-    public class GetGenreDetailQueryValidatorTest : IClassFixture<CommonTestFixture>
+    public class GetGenreDetailQueryValidatorTest  
     {
         [Theory]
         [InlineData(0)]

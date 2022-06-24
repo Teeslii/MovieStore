@@ -10,13 +10,18 @@ using WebApi.Application.DirectorOperations.Commands.UpdateDirector;
 
 namespace Tests.WebApi.UnitTests.Application.DirectorOperations.Commands.UpdateDirector
 {
-    public class UpdateDirectorCommandTests : IClassFixture<CommonTestFixture>
+    public class UpdateDirectorCommandTests : IDisposable, IClassFixture<CommonTestFixture>
     {
         private readonly MovieStoreDbContext _context;
 
         public UpdateDirectorCommandTests(CommonTestFixture testFixture)
         {
             _context = testFixture.context;
+        }
+
+        public void Dispose()
+        {
+            _context.Dispose();
         }
 
         [Fact]

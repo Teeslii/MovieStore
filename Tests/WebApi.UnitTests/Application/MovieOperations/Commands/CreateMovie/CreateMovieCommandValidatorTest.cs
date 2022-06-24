@@ -10,7 +10,7 @@ using Xunit;
 
 namespace Tests.WebApi.UnitTests.Application.MovieOperations.Commands.CreateMovie
 {
-    public class CreateMovieCommandValidatorTest : IClassFixture<CommonTestFixture>
+    public class CreateMovieCommandValidatorTest  
     {
 
         [Theory]

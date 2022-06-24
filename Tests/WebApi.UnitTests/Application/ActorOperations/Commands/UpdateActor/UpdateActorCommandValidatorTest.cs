@@ -6,7 +6,7 @@ using Xunit;
 
 namespace Tests.WebApi.UnitTests.Application.ActorOperations.Commands.UpdateActor
 {
-    public class UpdateActorCommandValidatorTest : IClassFixture<CommonTestFixture>
+    public class UpdateActorCommandValidatorTest 
     {
         [Theory]
         [InlineData(0,"a","b")]

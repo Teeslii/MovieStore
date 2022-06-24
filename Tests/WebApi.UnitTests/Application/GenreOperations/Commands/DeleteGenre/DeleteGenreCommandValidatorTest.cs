@@ -6,7 +6,7 @@ using Xunit;
 
 namespace Tests.WebApi.UnitTests.Application.GenreOperations.Commands.DeleteGenre
 {
-    public class DeleteGenreCommandValidatorTest : IClassFixture<CommonTestFixture>
+    public class DeleteGenreCommandValidatorTest 
     {
         [Theory]
         [InlineData(0)]

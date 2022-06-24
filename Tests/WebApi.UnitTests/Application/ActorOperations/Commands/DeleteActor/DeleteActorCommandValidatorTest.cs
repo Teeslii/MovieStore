@@ -5,7 +5,7 @@ using Xunit;
 
 namespace Tests.WebApi.UnitTests.Application.ActorOperations.Commands.DeleteActor
 {
-    public class DeleteActorCommandValidatorTest : IClassFixture<CommonTestFixture>
+    public class DeleteActorCommandValidatorTest 
     {
         [Theory]
         [InlineData(0)]

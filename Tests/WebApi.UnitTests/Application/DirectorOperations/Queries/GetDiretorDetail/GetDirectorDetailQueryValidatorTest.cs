@@ -9,7 +9,7 @@ using Xunit;
 
 namespace WebApi.UnitTests.Application.DirectorOperations.Queries.GetDiretorDetail
 {
-    public class GetDirectorDetailQueryValidatorTest : IClassFixture<CommonTestFixture>
+    public class GetDirectorDetailQueryValidatorTest  
     {
         [Theory]
         [InlineData(0)]

@@ -10,7 +10,7 @@ using Xunit;
 
 namespace WebApi.UnitTests.Application.CustomerOperations.Commands.CreateToken
 {
-    public class  CreateTokenCommandValidatorTest  : IClassFixture<CommonTestFixture>
+    public class  CreateTokenCommandValidatorTest 
     {
         [Theory]
         [InlineData("", "timrayne123")]

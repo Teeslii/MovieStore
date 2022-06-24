@@ -10,7 +10,7 @@ using WebApi.Application.DirectorOperations.Commands.CreateDirector;
 
 namespace Tests.WebApi.UnitTests.Application.DirectorOperations.Commands.CreateDirector
 {
-    public class CreateDirectorCommandTests : IClassFixture<CommonTestFixture>
+    public class CreateDirectorCommandTests : IDisposable, IClassFixture<CommonTestFixture>
     {
         private readonly MovieStoreDbContext _context;
         private readonly IMapper _mapper;
@@ -19,6 +19,11 @@ namespace Tests.WebApi.UnitTests.Application.DirectorOperations.Commands.CreateD
         {
             _context = testFixture.context;
             _mapper = testFixture.Mapper;
+        }
+
+        public void Dispose()
+        {
+            _context.Dispose();
         }
 
         [Fact]
