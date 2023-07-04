@@ -10,7 +10,7 @@ using Xunit;
 
 namespace Tests.WebApi.UnitTests.Application.DirectorOperations.Queries.GetDirectorDetail
 {
-    public class GetDirectorDetailQueryTests : IDisposable, IClassFixture<CommonTestFixture>
+    public class GetDirectorDetailQueryTests : IClassFixture<CommonTestFixture>
     {
         private readonly MovieStoreDbContext _context;
         private readonly IMapper _mapper;
@@ -21,11 +21,7 @@ namespace Tests.WebApi.UnitTests.Application.DirectorOperations.Queries.GetDirec
             _mapper = testFixture.Mapper;
         }
 
-        public void Dispose()
-        {
-            _context.Dispose();
-        }
-
+       
         [Fact]
         public void WhenNotFoundDirectorIdIsGiven_InvalidOperationException_ShouldBeReturn()
         {

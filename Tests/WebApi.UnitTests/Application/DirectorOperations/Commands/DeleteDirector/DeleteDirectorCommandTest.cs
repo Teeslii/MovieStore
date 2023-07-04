@@ -10,7 +10,7 @@ using WebApi.Application.DirectorOperations.Commands.DeleteDirector;
 
 namespace Tests.WebApi.UnitTests.Application.DirectorOperations.Commands.DeleteDirector
 {
-    public class DeleteDirectorCommandTests : IDisposable, IClassFixture<CommonTestFixture>
+    public class DeleteDirectorCommandTests : IClassFixture<CommonTestFixture>
     {
         private readonly MovieStoreDbContext _context;
         private readonly IMapper _mapper;
@@ -21,10 +21,7 @@ namespace Tests.WebApi.UnitTests.Application.DirectorOperations.Commands.DeleteD
             _mapper = testFixture.Mapper;
         }
         
-        public void Dispose()
-        {
-            _context.Dispose();
-        }
+        
         [Fact]
         public void WhenNotFoundDirectorIdIsGiven_InvalidOperationException_ShouldBeReturn()
         {

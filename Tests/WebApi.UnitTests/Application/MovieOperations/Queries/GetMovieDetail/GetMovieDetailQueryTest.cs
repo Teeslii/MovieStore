@@ -10,7 +10,7 @@ using Xunit;
 
 namespace Tests.WebApi.UnitTests.Application.MovieOperations.Queries.GetMovieDetail
 {
-    public class GetMovieDetailQueryTest : IDisposable, IClassFixture<CommonTestFixture>
+    public class GetMovieDetailQueryTest :  IClassFixture<CommonTestFixture>
     {
         private readonly MovieStoreDbContext _context;
         private readonly IMapper _mapper;
@@ -21,10 +21,7 @@ namespace Tests.WebApi.UnitTests.Application.MovieOperations.Queries.GetMovieDet
             _mapper = testFixture.Mapper;
         }
         
-        public void Dispose()
-        {
-            _context.Dispose();
-        }
+      
 
         [Fact]
         public void WhenNotFoundMovieIdIsGiven_InvalidOperationException_ShouldBeReturn()

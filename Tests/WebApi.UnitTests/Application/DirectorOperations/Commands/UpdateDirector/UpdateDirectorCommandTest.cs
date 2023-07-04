@@ -10,7 +10,7 @@ using WebApi.Application.DirectorOperations.Commands.UpdateDirector;
 
 namespace Tests.WebApi.UnitTests.Application.DirectorOperations.Commands.UpdateDirector
 {
-    public class UpdateDirectorCommandTests : IDisposable, IClassFixture<CommonTestFixture>
+    public class UpdateDirectorCommandTests : IClassFixture<CommonTestFixture>
     {
         private readonly MovieStoreDbContext _context;
 
@@ -19,10 +19,6 @@ namespace Tests.WebApi.UnitTests.Application.DirectorOperations.Commands.UpdateD
             _context = testFixture.context;
         }
 
-        public void Dispose()
-        {
-            _context.Dispose();
-        }
 
         [Fact]
         public void WhenAlreadyDirectorNameIsGiven_InvalidOperationException_ShouldBeReturn()

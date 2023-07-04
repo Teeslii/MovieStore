@@ -10,18 +10,13 @@ using Xunit;
 
 namespace Tests.WebApi.UnitTests.Application.MovieOperations.Commands.UpdateMovie
 {
-    public class UpdateMovieCommandTests : IDisposable, IClassFixture<CommonTestFixture>
+    public class UpdateMovieCommandTests : IClassFixture<CommonTestFixture>
     {
         private readonly MovieStoreDbContext _context;
 
         public UpdateMovieCommandTests(CommonTestFixture testFixture)
         {
             _context = testFixture.context;
-        }
-
-        public void Dispose()
-        {
-            _context.Dispose();
         }
 
         [Fact]

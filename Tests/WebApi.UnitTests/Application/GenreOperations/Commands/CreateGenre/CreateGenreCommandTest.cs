@@ -10,7 +10,7 @@ using Xunit;
 
 namespace Tests.WebApi.UnitTests.Application.GenreOperations.Commands.CreateGenre
 {
-    public class CreateGenreCommandTests : IDisposable, IClassFixture<CommonTestFixture>
+    public class CreateGenreCommandTests : IClassFixture<CommonTestFixture>
     {
         private readonly MovieStoreDbContext _context;
         private readonly IMapper _mapper;
@@ -21,11 +21,7 @@ namespace Tests.WebApi.UnitTests.Application.GenreOperations.Commands.CreateGenr
             _mapper = testFixture.Mapper;
         }
 
-        public void Dispose()
-        {
-            _context.Dispose();
-        }
-
+        
         [Fact]
         public void WhenAlreadyGenreNameIsGiven_InvalidOperationException_ShouldBeReturn()
         {

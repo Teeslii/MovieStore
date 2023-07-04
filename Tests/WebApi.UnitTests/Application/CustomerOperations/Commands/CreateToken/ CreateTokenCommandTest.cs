@@ -14,7 +14,7 @@ using Xunit;
 
 namespace WebApi.UnitTests.Application.CustomerOperations.Commands.CreateToken
 {
-    public class  CreateTokenCommandTest : IDisposable, IClassFixture<CommonTestFixture>
+    public class  CreateTokenCommandTest : IClassFixture<CommonTestFixture>
     {
         private readonly MovieStoreDbContext _dbContext;
         private readonly IMapper _mapper;
@@ -27,10 +27,7 @@ namespace WebApi.UnitTests.Application.CustomerOperations.Commands.CreateToken
              _configuration = testFixture.Configuration;
         }
 
-          public void Dispose()
-        {
-            _dbContext.Dispose();
-        }
+        
         
         [Theory]
         [InlineData("timrayne@outlook.com", "timrayne123")]

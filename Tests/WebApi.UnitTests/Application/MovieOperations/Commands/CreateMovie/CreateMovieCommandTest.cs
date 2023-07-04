@@ -10,7 +10,7 @@ using Xunit;
 
 namespace Tests.WebApi.UnitTests.Application.MovieOperations.Commands.CreateMovie
 {
-    public class CreateMovieCommandTests : IDisposable, IClassFixture<CommonTestFixture>
+    public class CreateMovieCommandTests : IClassFixture<CommonTestFixture>
     {
         private readonly MovieStoreDbContext _context;
         private readonly IMapper _mapper;
@@ -21,10 +21,6 @@ namespace Tests.WebApi.UnitTests.Application.MovieOperations.Commands.CreateMovi
             _mapper = testFixture.Mapper;
         }
 
-        public void Dispose()
-        {
-            _context.Dispose();
-        }
 
         [Fact]
         public void WhenAlreadyMovieNameIsGiven_InvalidOperationException_ShouldBeReturn()

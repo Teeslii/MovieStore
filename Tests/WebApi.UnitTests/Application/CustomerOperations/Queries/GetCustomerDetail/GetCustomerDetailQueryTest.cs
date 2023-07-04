@@ -12,7 +12,7 @@ using WebApi.Entities;
 
 namespace WebApi.UnitTests.Application.CustomerOperations.Queries
 {
-    public class GetCustomerDetailQueryTest : IDisposable, IClassFixture<CommonTestFixture>
+    public class GetCustomerDetailQueryTest : IClassFixture<CommonTestFixture>
     {
         private readonly MovieStoreDbContext _context;
         private readonly IMapper _mapper;
@@ -22,10 +22,6 @@ namespace WebApi.UnitTests.Application.CustomerOperations.Queries
               _mapper = testFixture.Mapper;
         }
 
-        public void Dispose()
-        {
-            _context.Dispose();
-        }
         
         [Fact]
         public void WhenGivenCustomerIsNotFound_Handle_ThrowsInvalidOperationException()

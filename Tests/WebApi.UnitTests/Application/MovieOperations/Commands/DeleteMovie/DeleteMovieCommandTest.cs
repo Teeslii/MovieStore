@@ -10,7 +10,7 @@ using Xunit;
 
 namespace Tests.WebApi.UnitTests.Application.MovieOperations.Commands.DeleteMovie
 {
-    public class DeleteMovieCommandTests : IDisposable, IClassFixture<CommonTestFixture>
+    public class DeleteMovieCommandTests :  IClassFixture<CommonTestFixture>
     {
         private readonly MovieStoreDbContext _context;
 
@@ -19,10 +19,6 @@ namespace Tests.WebApi.UnitTests.Application.MovieOperations.Commands.DeleteMovi
             _context = testFixture.context;
         }
 
-        public void Dispose()
-        {
-            _context.Dispose();
-        }
 
         [Fact]
         public void WhenNotFoundMovieIdIsGiven_InvalidOperationException_ShouldBeReturn()

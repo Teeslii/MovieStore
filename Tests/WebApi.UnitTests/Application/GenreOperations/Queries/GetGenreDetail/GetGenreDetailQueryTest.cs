@@ -10,7 +10,7 @@ using Xunit;
 
 namespace Tests.WebApi.UnitTests.Application.GenreOperations.Queries.GetGenreDetail
 {
-    public class GetGenreDetailQueryTests : IDisposable, IClassFixture<CommonTestFixture>
+    public class GetGenreDetailQueryTests :  IClassFixture<CommonTestFixture>
     {
         private readonly MovieStoreDbContext _context;
         private readonly IMapper _mapper;
@@ -21,10 +21,7 @@ namespace Tests.WebApi.UnitTests.Application.GenreOperations.Queries.GetGenreDet
             _mapper = testFixture.Mapper;
         }
         
-        public void Dispose()
-        {
-            _context.Dispose();
-        }
+        
         [Fact]
         public void WhenNotFoundGenreIdIsGiven_InvalidOperationException_ShouldBeReturn()
         {     
